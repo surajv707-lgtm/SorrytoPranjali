@@ -6,10 +6,10 @@
 
 :root {
   --pink: #ff4f81;
-  --dark-pink: #e72e67;
-  --soft-pink: #fff0f5;
-  --text: #241821;
-  --muted: #8c7c85;
+  --dark-pink: #e82f68;
+  --light-pink: #fff0f5;
+  --text: #271b21;
+  --muted: #897780;
   --white: #ffffff;
 }
 
@@ -17,77 +17,89 @@ body {
   min-height: 100vh;
   font-family: "DM Sans", sans-serif;
   color: var(--text);
+
   background:
-    radial-gradient(circle at 15% 15%, #ffd8e5 0, transparent 30%),
-    radial-gradient(circle at 90% 85%, #ffe1ec 0, transparent 32%),
-    linear-gradient(135deg, #fff8fb, #ffeef4);
+    radial-gradient(
+      circle at 10% 10%,
+      #ffd8e6 0,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      #ffe0eb 0,
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #fffafd,
+      #fff0f5
+    );
+
   overflow-x: hidden;
 }
 
-.background span {
+.bg-hearts span {
   position: fixed;
-  width: 15px;
-  height: 15px;
-  background: rgba(255, 79, 129, 0.15);
-  border-radius: 50%;
-  animation: float 8s infinite ease-in-out;
+  color: rgba(255, 79, 129, 0.14);
+  font-size: 70px;
   pointer-events: none;
+  animation: floating 8s ease-in-out infinite;
 }
 
-.background span:nth-child(1) {
-  left: 10%;
+.bg-hearts span:nth-child(1) {
+  left: 5%;
   top: 20%;
 }
 
-.background span:nth-child(2) {
-  left: 80%;
+.bg-hearts span:nth-child(2) {
+  right: 4%;
   top: 15%;
   animation-delay: 1s;
 }
 
-.background span:nth-child(3) {
-  left: 25%;
-  top: 80%;
+.bg-hearts span:nth-child(3) {
+  left: 15%;
+  bottom: 10%;
   animation-delay: 2s;
 }
 
-.background span:nth-child(4) {
-  left: 75%;
-  top: 70%;
+.bg-hearts span:nth-child(4) {
+  right: 15%;
+  bottom: 20%;
   animation-delay: 3s;
 }
 
-.background span:nth-child(5) {
-  left: 50%;
-  top: 10%;
+.bg-hearts span:nth-child(5) {
+  left: 45%;
+  top: 8%;
   animation-delay: 4s;
 }
 
-@keyframes float {
+@keyframes floating {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) rotate(0);
   }
 
   50% {
-    transform: translateY(-35px) scale(1.4);
+    transform: translateY(-25px) rotate(10deg);
   }
 }
 
 .app {
-  width: min(94%, 520px);
+  width: min(94%, 530px);
   min-height: 100vh;
   margin: auto;
-  padding: 28px 0;
+  padding: 25px 0;
+
   display: flex;
   flex-direction: column;
 }
 
-.progress {
-  width: 100%;
-  margin-bottom: 30px;
+.progress-area {
+  margin-bottom: 25px;
 }
 
-.progress-line {
+.progress-bar {
   width: 100%;
   height: 5px;
   background: rgba(255, 79, 129, 0.12);
@@ -98,46 +110,53 @@ body {
 #progressFill {
   width: 20%;
   height: 100%;
-  background: linear-gradient(90deg, #ff7b9e, #ff3f78);
+  background: linear-gradient(
+    90deg,
+    #ff7fa2,
+    #ed326c
+  );
   border-radius: 20px;
-  transition: 0.6s ease;
+  transition: width 0.6s ease;
 }
 
-.progress-dots {
+.dots {
   display: flex;
   justify-content: space-between;
   margin-top: -5px;
 }
 
-.progress-dots i {
+.dots i {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #ffd3df;
-  border: 3px solid #fff6f9;
-  transition: 0.4s ease;
+  background: #ffd4e1;
+  border: 3px solid #fff7fa;
+  transition: 0.4s;
 }
 
-.progress-dots i.active {
+.dots i.active {
   background: var(--pink);
-  transform: scale(1.25);
+  transform: scale(1.3);
 }
 
 .stage {
   display: none;
-  flex: 1;
-  text-align: center;
+  min-height: calc(100vh - 90px);
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: pageIn 0.7s ease;
+
+  text-align: center;
+
+  animation: appear 0.65s ease;
 }
 
 .stage.active {
   display: flex;
 }
 
-@keyframes pageIn {
+@keyframes appear {
   from {
     opacity: 0;
     transform: translateY(25px);
@@ -149,13 +168,15 @@ body {
   }
 }
 
-.emoji-big {
-  font-size: 72px;
+.big-emoji {
+  font-size: 70px;
   margin-bottom: 20px;
-  animation: breathe 2.5s infinite ease-in-out;
+
+  animation:
+    breathing 2.5s infinite ease-in-out;
 }
 
-@keyframes breathe {
+@keyframes breathing {
   0%, 100% {
     transform: scale(1);
   }
@@ -165,9 +186,9 @@ body {
   }
 }
 
-.small-title {
+.eyebrow {
   color: var(--pink);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 3px;
   margin-bottom: 13px;
@@ -194,201 +215,79 @@ h2 span {
 
 .intro {
   max-width: 390px;
-  margin: 22px auto 32px;
+  margin: 23px auto 30px;
+
   color: var(--muted);
+  font-size: 15px;
   line-height: 1.7;
-  font-size: 16px;
 }
 
-.tiny {
-  margin-top: 15px;
-  color: #a7959e;
+.tiny-text {
+  color: #aa969f;
   font-size: 12px;
+  margin-top: 14px;
 }
 
-.main-btn {
-  border: 0;
+.primary-btn {
+  border: none;
   padding: 17px 25px;
+
   border-radius: 18px;
+
   color: white;
+  background:
+    linear-gradient(
+      135deg,
+      #ff6d98,
+      #e82e67
+    );
+
   font-size: 15px;
   font-weight: 700;
-  background: linear-gradient(135deg, #ff6b96, #e92e67);
-  box-shadow: 0 15px 30px rgba(233, 46, 103, 0.22);
+
   cursor: pointer;
-  transition: 0.25s ease;
+
+  box-shadow:
+    0 15px 35px
+    rgba(232, 46, 103, 0.22);
+
+  transition: 0.25s;
 }
 
-.main-btn span {
-  margin-left: 10px;
-}
-
-.main-btn:hover {
+.primary-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 35px rgba(233, 46, 103, 0.28);
 }
 
-.main-btn:active {
+.primary-btn:active {
   transform: scale(0.97);
 }
 
-.icon-circle {
+.round-icon {
   width: 82px;
   height: 82px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
+
   background: white;
-  font-size: 38px;
-  box-shadow: 0 15px 40px rgba(100, 30, 60, 0.10);
-  margin-bottom: 25px;
-}
 
-.letter-card,
-.message-card,
-.promise-card {
-  width: 100%;
-  margin: 25px 0 28px;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 25px;
-  box-shadow: 0 20px 50px rgba(100, 30, 60, 0.08);
-  backdrop-filter: blur(15px);
-}
+  font-size: 37px;
 
-.letter-card p,
-.message-card p {
-  color: #66565f;
-  line-height: 1.75;
-  font-size: 15px;
-  margin-bottom: 17px;
-}
+  box-shadow:
+    0 18px 45px
+    rgba(80, 30, 55, 0.1);
 
-.signature {
-  margin-top: 20px;
-  color: var(--pink);
-  font-weight: 700;
-}
-
-.highlight {
-  color: var(--pink) !important;
-  font-weight: 800;
-  font-size: 17px !important;
-}
-
-.promise-card {
-  padding: 12px 20px;
-}
-
-.promise {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  text-align: left;
-  padding: 17px 5px;
-  border-bottom: 1px solid #f4dfe7;
-}
-
-.promise:last-child {
-  border-bottom: none;
-}
-
-.promise span {
-  min-width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: var(--pink);
-  background: #fff0f5;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.promise p {
-  color: #66565f;
-  font-size: 14px;
-}
-
-.soft-text {
-  max-width: 390px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-
-.final-message {
-  max-width: 400px;
-  color: #6f5d66;
-  line-height: 1.7;
-  font-size: 15px;
-  margin: 25px 0;
-}
-
-.final-message strong {
-  color: var(--pink);
-  font-size: 17px;
-}
-
-.final-question {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  margin-bottom: 22px;
-}
-
-.buttons {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-}
-
-.forgive-btn,
-.talk-btn {
-  width: 100%;
-  padding: 16px;
-  border-radius: 16px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.forgive-btn {
-  border: none;
-  color: white;
-  background: linear-gradient(135deg, #ff6a96, #e92e67);
-  box-shadow: 0 12px 30px rgba(233, 46, 103, 0.2);
-}
-
-.talk-btn {
-  color: #8d727d;
-  background: white;
-  border: 1px solid #f0dce4;
-}
-
-.forgive-btn:hover,
-.talk-btn:hover {
-  transform: translateY(-2px);
-}
-
-#response {
-  min-height: 25px;
-  margin-top: 18px;
-  color: var(--pink);
-  font-weight: 700;
-  line-height: 1.5;
+  margin-bottom: 24px;
 }
 
 .heart {
-  animation: heartBeat 1.4s infinite;
+  animation: heartbeat 1.4s infinite;
 }
 
-@keyframes heartBeat {
+@keyframes heartbeat {
   0%, 100% {
     transform: scale(1);
   }
@@ -402,40 +301,255 @@ h2 span {
   }
 }
 
-.heart-float {
-  position: fixed;
-  bottom: -30px;
+.story-card,
+.letter-card,
+.promise-card {
+  width: 100%;
+  margin: 25px 0;
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 20px 55px
+    rgba(80, 30, 55, 0.08);
+
+  backdrop-filter: blur(15px);
+}
+
+.story-card p,
+.letter-card p {
+  color: #66555e;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  margin-bottom: 17px;
+}
+
+.story-card p:last-child,
+.letter-card p:last-child {
+  margin-bottom: 0;
+}
+
+.important {
+  color: var(--pink) !important;
+  font-weight: 700;
+}
+
+.special {
+  color: var(--pink) !important;
+  font-size: 18px !important;
+  font-weight: 800;
+}
+
+.promise-card {
+  padding: 10px 20px;
+}
+
+.promise {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px 4px;
+
+  text-align: left;
+
+  border-bottom:
+    1px solid #f3dfe7;
+}
+
+.promise:last-child {
+  border-bottom: none;
+}
+
+.promise b {
+  min-width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--pink);
+  background: var(--light-pink);
+
+  font-size: 11px;
+}
+
+.promise span {
+  color: #66555e;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.soft-text {
+  max-width: 390px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  margin-bottom: 23px;
+}
+
+.final-text {
+  max-width: 410px;
+
+  color: #6c5b64;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  margin: 24px 0;
+}
+
+.final-text strong {
+  color: var(--pink);
+  font-size: 18px;
+}
+
+.question {
+  font-family: "Playfair Display", serif;
   font-size: 24px;
+
+  margin-bottom: 20px;
+}
+
+.choice-buttons {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.okay-btn,
+.angry-btn {
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.okay-btn {
+  border: none;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff6d98,
+      #e82e67
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(232, 46, 103, 0.2);
+}
+
+.angry-btn {
+  border:
+    1px solid #efdce4;
+
+  color: #8d727c;
+
+  background: white;
+}
+
+.okay-btn:hover,
+.angry-btn:hover {
+  transform: translateY(-2px);
+}
+
+#response {
+  min-height: 30px;
+
+  margin-top: 18px;
+
+  color: var(--pink);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.6;
+}
+
+.floating-heart {
+  position: fixed;
+
+  bottom: -40px;
+
   pointer-events: none;
-  animation: heartUp 4s ease-out forwards;
-  z-index: 20;
+
+  z-index: 50;
+
+  animation:
+    heartUp 4s
+    ease-out
+    forwards;
 }
 
 @keyframes heartUp {
-  0% {
-    transform: translateY(0) rotate(0deg);
+  from {
+    transform:
+      translateY(0)
+      rotate(0);
     opacity: 1;
   }
 
-  100% {
-    transform: translateY(-110vh) rotate(35deg);
+  to {
+    transform:
+      translateY(-110vh)
+      rotate(35deg);
     opacity: 0;
   }
 }
 
 .confetti {
   position: fixed;
+
   top: -20px;
+
   width: 8px;
   height: 14px;
+
   background: var(--pink);
-  animation: confettiFall 3s linear forwards;
-  z-index: 50;
+
+  z-index: 100;
+
+  animation:
+    confettiFall 3s
+    linear
+    forwards;
 }
 
 @keyframes confettiFall {
   to {
-    transform: translateY(110vh) rotate(720deg);
+    transform:
+      translateY(110vh)
+      rotate(720deg);
     opacity: 0;
   }
 }
@@ -443,7 +557,7 @@ h2 span {
 @media (max-width: 420px) {
 
   .app {
-    padding: 22px 0;
+    padding: 20px 0;
   }
 
   h1 {
@@ -454,12 +568,12 @@ h2 span {
     font-size: 37px;
   }
 
-  .emoji-big {
-    font-size: 62px;
+  .big-emoji {
+    font-size: 60px;
   }
 
+  .story-card,
   .letter-card,
-  .message-card,
   .promise-card {
     padding: 20px;
   }

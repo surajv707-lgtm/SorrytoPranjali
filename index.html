@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Pranjali ❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="background">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <main class="app">
+
+    <!-- PROGRESS -->
+    <div class="progress">
+      <div class="progress-line">
+        <div id="progressFill"></div>
+      </div>
+
+      <div class="progress-dots">
+        <i class="active"></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </div>
+
+    <!-- STAGE 1 -->
+    <section class="stage active" id="stage1">
+
+      <div class="emoji-big">🥺</div>
+
+      <p class="small-title">HEY PRANJALI...</p>
+
+      <h1>
+        Can I have<br>
+        <span>2 minutes?</span>
+      </h1>
+
+      <p class="intro">
+        I know you're angry with me right now...
+        and honestly, I don't blame you.
+      </p>
+
+      <button class="main-btn" onclick="nextStage()">
+        Okay... what's this? <span>→</span>
+      </button>
+
+      <p class="tiny">Something I really wanted to tell you.</p>
+
+    </section>
+
+
+    <!-- STAGE 2 -->
+    <section class="stage" id="stage2">
+
+      <div class="icon-circle">💌</div>
+
+      <p class="small-title">FIRST OF ALL</p>
+
+      <h2>
+        I'm genuinely<br>
+        <span>sorry, Pranjali.</span>
+      </h2>
+
+      <div class="letter-card">
+
+        <p>
+          I know saying "sorry" is easy...
+          but I don't want this to be just another sorry.
+        </p>
+
+        <p>
+          If something I did or said hurt you,
+          I'm really sorry. I never wanted to make
+          you feel bad.
+        </p>
+
+        <div class="signature">
+          — Your idiot best friend 🫠
+        </div>
+
+      </div>
+
+      <button class="main-btn" onclick="nextStage()">
+        Keep reading <span>→</span>
+      </button>
+
+    </section>
+
+
+    <!-- STAGE 3 -->
+    <section class="stage" id="stage3">
+
+      <div class="icon-circle heart">❤️</div>
+
+      <p class="small-title">SOMETHING I NEED YOU TO KNOW</p>
+
+      <h2>
+        You're not just<br>
+        <span>a friend.</span>
+      </h2>
+
+      <div class="message-card">
+
+        <p>
+          Pranjali, I don't want to lose my best friend over
+          one misunderstanding, one mistake, or one stupid
+          thing I did.
+        </p>
+
+        <p>
+          I've shared so many things with you, talked to you
+          about things I don't normally tell everyone, laughed
+          with you, irritated you, and probably tested your
+          patience way too many times. 😭
+        </p>
+
+        <p>
+          And honestly, I don't want all of that to suddenly
+          become nothing.
+        </p>
+
+        <p class="highlight">
+          I really don't want to lose you as my best friend.
+        </p>
+
+      </div>
+
+      <button class="main-btn" onclick="nextStage()">
+        One more thing... <span>→</span>
+      </button>
+
+    </section>
+
+
+    <!-- STAGE 4 -->
+    <section class="stage" id="stage4">
+
+      <div class="icon-circle">🫶</div>
+
+      <p class="small-title">A LITTLE PROMISE</p>
+
+      <h2>
+        No excuses.<br>
+        Just <span>sorry.</span>
+      </h2>
+
+      <div class="promise-card">
+
+        <div class="promise">
+          <span>01</span>
+          <p>I won't try to justify what hurt you.</p>
+        </div>
+
+        <div class="promise">
+          <span>02</span>
+          <p>I'll actually listen when you're upset.</p>
+        </div>
+
+        <div class="promise">
+          <span>03</span>
+          <p>I'll try to be a better friend.</p>
+        </div>
+
+      </div>
+
+      <p class="soft-text">
+        You don't have to instantly stop being angry.
+        I just hope you don't stop talking to me forever.
+      </p>
+
+      <button class="main-btn" onclick="nextStage()">
+        Last page ❤️ <span>→</span>
+      </button>
+
+    </section>
+
+
+    <!-- STAGE 5 -->
+    <section class="stage final-stage" id="stage5">
+
+      <div id="finalEmoji" class="emoji-big">🥹</div>
+
+      <p class="small-title">PRANJALI...</p>
+
+      <h1>
+        Can we please<br>
+        <span>talk again?</span>
+      </h1>
+
+      <p class="final-message">
+        I'm really sorry yrrr.
+        <br><br>
+        I don't want to fight with you.
+        I don't want things to become awkward between us.
+        And most importantly...
+        <br><br>
+        <strong>I don't want to lose my best friend.</strong>
+      </p>
+
+      <div class="final-question">
+        Will you forgive this idiot? 🥺
+      </div>
+
+      <div class="buttons">
+
+        <button class="forgive-btn" onclick="forgive()">
+          Okay, I forgive you ❤️
+        </button>
+
+        <button class="talk-btn" onclick="talk()">
+          I'm still angry 😤
+        </button>
+
+      </div>
+
+      <p id="response"></p>
+
+      <div id="celebration"></div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

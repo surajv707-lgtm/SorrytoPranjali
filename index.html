@@ -9,14 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="bg-hearts">
+  <!-- BACKGROUND -->
+  <div class="background">
     <span>♡</span>
     <span>♡</span>
     <span>♡</span>
@@ -24,258 +25,374 @@
     <span>♡</span>
   </div>
 
-  <main class="app">
+  <div class="app">
 
-    <!-- TOP PROGRESS -->
-    <div class="progress-area">
-      <div class="progress-bar">
-        <div id="progressFill"></div>
+    <!-- TOP -->
+    <header class="top">
+
+      <div class="brand">
+        <span class="brand-heart">♥</span>
+        <span>For Pranjali</span>
       </div>
 
-      <div class="dots">
-        <i class="active"></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
+      <div class="page-count">
+        <span id="pageNumber">1</span>/5
       </div>
+
+    </header>
+
+
+    <!-- PROGRESS -->
+    <div class="progress">
+      <div id="progressBar"></div>
     </div>
 
 
-    <!-- STAGE 1 -->
+    <!-- =========================
+         STAGE 1
+    ========================== -->
+
     <section class="stage active" id="stage1">
 
-      <div class="big-emoji">🥺</div>
+      <div class="game-icon">
+        💌
+      </div>
 
-      <p class="eyebrow">PRANJALI, WAIT...</p>
+      <div class="tag">
+        LEVEL 01 • PLEASE OPEN
+      </div>
 
       <h1>
-        I need to<br>
-        <span>explain something.</span>
+        Pranjali,<br>
+        <span>wait yrr...</span>
       </h1>
 
-      <p class="intro">
-        I know you're angry with me because I didn't
-        message you last night.
-      </p>
+      <div class="card">
 
-      <button class="primary-btn" onclick="nextStage()">
-        Hear me once? →
+        <p>
+          I know you're angry with me.
+        </p>
+
+        <p>
+          And before you think that I don't care
+          about you, I just want you to hear me
+          once.
+        </p>
+
+        <p class="pink-text">
+          Because I really don't want to lose
+          my best friend.
+        </p>
+
+      </div>
+
+      <button class="game-button" onclick="nextStage()">
+        <span>▶</span>
+        Okay, tell me
       </button>
 
-      <p class="tiny-text">
-        I promise I'm not making excuses.
-      </p>
+      <div class="hint">
+        tap to unlock the next page ✨
+      </div>
 
     </section>
 
 
-    <!-- STAGE 2 -->
+
+    <!-- =========================
+         STAGE 2
+    ========================== -->
+
     <section class="stage" id="stage2">
 
-      <div class="round-icon">💭</div>
+      <div class="game-icon">
+        🏠
+      </div>
 
-      <p class="eyebrow">WHAT ACTUALLY HAPPENED</p>
+      <div class="tag">
+        LEVEL 02 • WHAT ACTUALLY HAPPENED
+      </div>
 
       <h2>
         I didn't<br>
-        <span>forget you.</span>
+        <span>ignore you.</span>
       </h2>
 
-      <div class="story-card">
+      <div class="card">
 
         <p>
-          Yesterday, after I came home from my friend's
-          house, I got busy doing my house work.
+          Yesterday I came home after being at
+          my friend's house.
         </p>
 
         <p>
-          I was doing things at home and while doing all
-          that, I genuinely forgot to message you at night.
-        </p>
-
-        <p class="important">
-          It wasn't because I didn't want to talk to you.
-          It wasn't because I was ignoring you.
+          After coming home, I got busy doing
+          my house work.
         </p>
 
         <p>
-          I simply got busy and it completely slipped
-          out of my mind.
+          I was doing things at home and in
+          between all of that, I genuinely forgot
+          to message you at night.
+        </p>
+
+        <p class="pink-text">
+          That's honestly what happened.
         </p>
 
       </div>
 
-      <button class="primary-btn" onclick="nextStage()">
-        There's more... →
+      <div class="truth-box">
+        <span>♡</span>
+        <div>
+          <strong>Not an excuse.</strong>
+          <small>
+            Just telling you what actually happened.
+          </small>
+        </div>
+      </div>
+
+      <button class="game-button" onclick="nextStage()">
+        I understand... →
       </button>
 
     </section>
 
 
-    <!-- STAGE 3 -->
+
+    <!-- =========================
+         STAGE 3
+    ========================== -->
+
     <section class="stage" id="stage3">
 
-      <div class="round-icon heart">❤️</div>
+      <div class="game-icon heart-animation">
+        ❤️
+      </div>
 
-      <p class="eyebrow">WHAT I REALLY WANT TO SAY</p>
+      <div class="tag">
+        LEVEL 03 • PLEASE READ THIS
+      </div>
 
       <h2>
-        Please don't think<br>
-        <span>you don't matter.</span>
+        You matter<br>
+        <span>to me.</span>
       </h2>
 
-      <div class="letter-card">
+      <div class="card">
 
         <p>
-          Pranjali, I'm genuinely sorry that I forgot to
-          message you. I know you were probably waiting
-          for my message, and I understand why that hurt
-          you.
+          Pranjali, I know forgetting to message
+          you can make you feel like I don't care.
         </p>
 
         <p>
-          But please believe me, forgetting to message you
-          for one night doesn't mean I forgot about you.
-          You are genuinely important to me.
+          But please don't think that.
+          I didn't forget <b>you</b>.
+          I just forgot to send a message.
         </p>
 
         <p>
-          Sometimes I get busy with things at home and
-          stupidly lose track of things, but that doesn't
-          change how much I value our friendship.
-        </p>
-
-        <p class="special">
-          I will never forget you, Pranjali.
+          There is a difference, and I really hope
+          you understand what I mean.
         </p>
 
         <p>
-          I don't want one stupid mistake to create
-          distance between us. You're my best friend and
-          I really don't want to lose you.
+          You're someone with whom I've shared so
+          many things, talked about random things,
+          laughed, irritated each other and made
+          so many memories.
+        </p>
+
+        <p class="pink-text big-line">
+          I will never forget you.
+        </p>
+
+        <p>
+          One missed message doesn't change how
+          important you are to me.
         </p>
 
       </div>
 
-      <button class="primary-btn" onclick="nextStage()">
-        One last thing... ❤️ →
+      <button class="game-button" onclick="nextStage()">
+        Keep going ❤️
       </button>
 
     </section>
 
 
-    <!-- STAGE 4 -->
+
+    <!-- =========================
+         STAGE 4
+    ========================== -->
+
     <section class="stage" id="stage4">
 
-      <div class="round-icon">🫶</div>
+      <div class="game-icon">
+        🫶
+      </div>
 
-      <p class="eyebrow">I'M REALLY SORRY</p>
+      <div class="tag">
+        LEVEL 04 • MY PROMISE
+      </div>
 
       <h2>
-        No excuses.<br>
-        Just <span>sorry.</span>
+        I'm sorry,<br>
+        <span>for real.</span>
       </h2>
 
-      <div class="promise-card">
+      <div class="card">
+
+        <p>
+          I'm sorry for forgetting to message you.
+        </p>
+
+        <p>
+          I'm sorry if you were waiting for my
+          message and felt bad because I didn't text.
+        </p>
+
+        <p>
+          I'm sorry if my mistake made you feel
+          that you aren't important to me.
+        </p>
+
+        <p class="pink-text">
+          You are important to me, Pranjali.
+        </p>
+
+        <p>
+          I'll try to be more careful next time.
+          I don't want a small mistake like this
+          to create distance between us.
+        </p>
+
+      </div>
+
+      <div class="promise-list">
 
         <div class="promise">
           <b>01</b>
-          <span>I'm sorry for forgetting to message you.</span>
+          <span>I won't take our friendship for granted.</span>
         </div>
 
         <div class="promise">
           <b>02</b>
-          <span>I'm sorry if I made you feel ignored.</span>
+          <span>I'll try to remember the little things.</span>
         </div>
 
         <div class="promise">
           <b>03</b>
-          <span>I'll try to be more careful next time.</span>
-        </div>
-
-        <div class="promise">
-          <b>04</b>
-          <span>I don't want this silly thing to affect our friendship.</span>
+          <span>And yes... I'll try not to be such an idiot. 😭</span>
         </div>
 
       </div>
 
-      <p class="soft-text">
-        You can still be angry with me.
-        I just wanted you to know what actually happened.
-      </p>
-
-      <button class="primary-btn" onclick="nextStage()">
-        Okay... last page ❤️
+      <button class="game-button" onclick="nextStage()">
+        One last thing... →
       </button>
 
     </section>
 
 
-    <!-- STAGE 5 -->
-    <section class="stage final-stage" id="stage5">
 
-      <div class="big-emoji" id="finalEmoji">🥹</div>
+    <!-- =========================
+         STAGE 5
+    ========================== -->
 
-      <p class="eyebrow">PRANJALI...</p>
+    <section class="stage final" id="stage5">
+
+      <div class="game-icon final-heart" id="finalEmoji">
+        🥺
+      </div>
+
+      <div class="tag">
+        FINAL LEVEL • JUST US
+      </div>
 
       <h1>
         Please don't<br>
         <span>stay angry.</span>
       </h1>
 
-      <p class="final-text">
+      <div class="card final-card">
 
-        I'm really sorry yrrr. ❤️
-        <br><br>
+        <p>
+          Pranjali, I'm genuinely sorry yrr.
+        </p>
 
-        I wasn't ignoring you. I wasn't avoiding you.
-        I came home from my friend's house and got busy
-        doing my house work, and while doing everything
-        I simply forgot to message you.
-        <br><br>
+        <p>
+          I didn't forget you.
+          I just got busy after coming home,
+          doing my house work, and I stupidly
+          forgot to message you.
+        </p>
 
-        I know I should have remembered.
-        And I'm genuinely sorry for that.
-        <br><br>
+        <p>
+          I know that doesn't change the fact
+          that you were expecting my message.
+          And I'm sorry for making you feel bad.
+        </p>
 
-        <strong>
+        <p class="pink-text">
           I will never forget you.
-        </strong>
+        </p>
 
-        <br><br>
+        <p>
+          You're my best friend and I really don't
+          want to lose you because of something
+          this small.
+        </p>
 
-        You're my best friend, and I don't want to lose
-        you because of something this stupid.
-        <br><br>
+        <p>
+          I don't expect you to stop being angry
+          immediately.
+        </p>
 
-        Please talk to me when you're ready.
-        🥺❤️
+        <p>
+          I just want you to know that I'm here,
+          I'm sorry, and whenever you're ready...
+          <b>please talk to me again.</b>
+        </p>
 
-      </p>
-
-      <div class="question">
-        So... what do you say? 🥺
       </div>
 
-      <div class="choice-buttons">
+      <div class="final-question">
+        So... can we be okay again? 🥺
+      </div>
 
-        <button class="okay-btn" onclick="okayClicked()">
-          Okay... ❤️
+
+      <div class="choice-area">
+
+        <button
+          class="okay-button"
+          onclick="okayClicked()"
+        >
+          <span>❤️</span>
+          Okay...
         </button>
 
-        <button class="angry-btn" onclick="stillAngry()">
+        <button
+          class="angry-button"
+          onclick="stillAngry()"
+        >
           I'm still angry 😤
         </button>
 
       </div>
 
+
       <div id="response"></div>
 
     </section>
 
-  </main>
+  </div>
+
+
+  <!-- CELEBRATION -->
+  <div id="effects"></div>
+
 
   <script src="script.js"></script>
 

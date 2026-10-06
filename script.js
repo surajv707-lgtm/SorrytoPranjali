@@ -15,29 +15,7 @@ const whatsappNumber = "9172660105";
    THE MESSAGE THAT WILL BE COPIED
 ================================= */
 
-const whatsappMessage = `
-Pranjali, I'm really sorry yrrr. ❤️
-
-I know you're angry because I forgot to message you last night.
-
-I just want to explain what actually happened. I came home after being at my friend's house and got busy doing my house work. While doing everything at home, I genuinely forgot to message you.
-
-I know I should have remembered. And I'm really sorry for that.
-
-But please don't think that I was ignoring you or that I don't care about you.
-
-I didn't forget you. I just forgot to message you.
-
-You're my best friend and you're genuinely important to me.
-
-I don't want one stupid mistake to create distance between us.
-
-And I promise you, I will never forget you. ❤️
-
-I'm really sorry yrrr.
-
-Please talk to me whenever you're ready. 🥺❤️
-`;
+const whatsappMessage = "Okay, I forgive you. ❤️";
 
 
 /* =================================
@@ -120,7 +98,7 @@ async function okayClicked() {
 
   if (
     !whatsappNumber ||
-    whatsappNumber === "YOUR_10_DIGIT_NUMBER" ||
+    whatsappNumber === "9172660105" ||
     whatsappNumber.length !== 10
   ) {
 

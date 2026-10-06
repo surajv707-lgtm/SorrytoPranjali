@@ -4,15 +4,15 @@ const totalStages = 5;
 
 
 /* =================================
-   PUT YOUR COMPLETE 10-DIGIT NUMBER
-   HERE
+   PUT YOUR 10-DIGIT NUMBER HERE
+   WITHOUT +91
 ================================= */
 
-const whatsappNumber = "9172660105";
+const whatsappNumber = "7266010105";
 
 
 /* =================================
-   THE MESSAGE THAT WILL BE COPIED
+   WHATSAPP MESSAGE
 ================================= */
 
 const whatsappMessage = "Okay, I forgive you. ❤️";
@@ -93,20 +93,20 @@ async function okayClicked() {
 
 
   /*
-     Check if number was entered
+     Check number
   */
 
   if (
     !whatsappNumber ||
-    whatsappNumber === "9172660105" ||
-    whatsappNumber.length !== 10
+    whatsappNumber.length !== 10 ||
+    !/^\d{10}$/.test(whatsappNumber)
   ) {
 
     response.innerHTML = `
       ❤️ Almost there...
       <br><br>
-      The WhatsApp number still needs to
-      be entered correctly in the code.
+      Please enter a valid 10-digit
+      WhatsApp number in the code.
     `;
 
     return;
@@ -114,13 +114,13 @@ async function okayClicked() {
 
 
   /*
-     Copy message
+     Copy ONLY the short message
   */
 
   try {
 
     await navigator.clipboard.writeText(
-      whatsappMessage.trim()
+      whatsappMessage
     );
 
     response.innerHTML = `
@@ -143,7 +143,8 @@ async function okayClicked() {
 
 
   /*
-     Open WhatsApp
+     Open WhatsApp with ONLY:
+     "Okay, I forgive you. ❤️"
   */
 
   setTimeout(() => {
@@ -153,7 +154,7 @@ async function okayClicked() {
       whatsappNumber +
       "?text=" +
       encodeURIComponent(
-        whatsappMessage.trim()
+        whatsappMessage
       );
 
 

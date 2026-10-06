@@ -4,17 +4,11 @@ const totalStages = 5;
 
 
 /* =================================
-   YOUR WHATSAPP NUMBER
+   YOUR WORKING WHATSAPP LINK
 ================================= */
 
-const whatsappNumber = "9172660105";
-
-
-/* =================================
-   WHATSAPP MESSAGE
-================================= */
-
-const whatsappMessage = "Okay, I forgive you. ❤️";
+const whatsappLink =
+  "https://wa.me/9172660105?text=Okay%2C%20I%20forgive%20you.%20%E2%9D%A4%EF%B8%8F";
 
 
 /* =================================
@@ -30,11 +24,13 @@ function nextStage() {
 
   oldStage.classList.remove("active");
 
+
   currentStage++;
 
   if (currentStage > totalStages) {
     currentStage = totalStages;
   }
+
 
   const newStage =
     document.getElementById(
@@ -43,9 +39,11 @@ function nextStage() {
 
   newStage.classList.add("active");
 
+
   updateProgress();
 
   createHearts(4);
+
 
   window.scrollTo({
     top: 0,
@@ -63,13 +61,17 @@ function updateProgress() {
   const percentage =
     (currentStage / totalStages) * 100;
 
+
   document.getElementById(
     "progressBar"
-  ).style.width = percentage + "%";
+  ).style.width =
+    percentage + "%";
+
 
   document.getElementById(
     "pageNumber"
-  ).textContent = currentStage;
+  ).textContent =
+    currentStage;
 }
 
 
@@ -77,25 +79,10 @@ function updateProgress() {
    OKAY BUTTON
 ================================= */
 
-async function okayClicked() {
+function okayClicked() {
 
   const response =
     document.getElementById("response");
-
-
-  /* Copy ONLY the short message */
-
-  try {
-
-    await navigator.clipboard.writeText(
-      whatsappMessage
-    );
-
-  } catch (error) {
-
-    console.log("Clipboard not available");
-
-  }
 
 
   response.innerHTML = `
@@ -109,25 +96,15 @@ async function okayClicked() {
 
 
   /* =================================
-     OPEN WHATSAPP
-     Using the number exactly as entered
+     OPEN THE EXACT WHATSAPP LINK
   ================================= */
-
-  const whatsappURL =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(
-      whatsappMessage
-    );
-
 
   setTimeout(() => {
 
     window.location.href =
-      whatsappURL;
+      whatsappLink;
 
-  }, 700);
+  }, 500);
 }
 
 
@@ -159,6 +136,8 @@ function stillAngry() {
   createHearts(8);
 
 
+  /* Second apology */
+
   setTimeout(() => {
 
     response.innerHTML = `
@@ -174,6 +153,8 @@ function stillAngry() {
   }, 2300);
 
 
+  /* Final message */
+
   setTimeout(() => {
 
     response.innerHTML = `
@@ -184,6 +165,7 @@ function stillAngry() {
       <br>
       I'll be here whenever you're ready to talk.
     `;
+
 
     createHearts(12);
 
@@ -231,7 +213,8 @@ function createHearts(amount) {
 
 
     heart.style.left =
-      Math.random() * 100 + "vw";
+      Math.random() * 100 +
+      "vw";
 
 
     heart.style.fontSize =
@@ -281,11 +264,13 @@ function createConfetti() {
 
 
     piece.style.left =
-      Math.random() * 100 + "vw";
+      Math.random() * 100 +
+      "vw";
 
 
     piece.style.animationDelay =
-      Math.random() * 1.5 + "s";
+      Math.random() * 1.5 +
+      "s";
 
 
     document.body.appendChild(

@@ -85,83 +85,26 @@ function updateProgress() {
 /* =================================
    OKAY BUTTON
 ================================= */
-
 async function okayClicked() {
 
-  const response =
-    document.getElementById("response");
+  const response = document.getElementById("response");
 
+  const whatsappURL =
+    "https://wa.me/91" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent("Okay, I forgive you. ❤️");
 
-  /*
-     Check number
-  */
-
-  if (
-    !whatsappNumber ||
-    whatsappNumber.length !== 10 ||
-    !/^\d{10}$/.test(whatsappNumber)
-  ) {
-
-    response.innerHTML = `
-      ❤️ Almost there...
-      <br><br>
-      Please enter a valid 10-digit
-      WhatsApp number in the code.
-    `;
-
-    return;
-  }
-
-
-  /*
-     Copy ONLY the short message
-  */
-
-  try {
-
-    await navigator.clipboard.writeText(
-      whatsappMessage
-    );
-
-    response.innerHTML = `
-      Message copied ❤️
-      <br>
-      Opening WhatsApp...
-    `;
-
-  } catch (error) {
-
-    response.innerHTML = `
-      Opening WhatsApp... ❤️
-    `;
-  }
-
+  response.innerHTML = `
+    Opening WhatsApp... ❤️
+  `;
 
   createHearts(25);
-
   createConfetti();
 
-
-  /*
-     Open WhatsApp with ONLY:
-     "Okay, I forgive you. ❤️"
-  */
-
   setTimeout(() => {
-
-    const whatsappURL =
-      "https://wa.me/91" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(
-        whatsappMessage
-      );
-
-
-    window.location.href =
-      whatsappURL;
-
-  }, 900);
+    window.location.href = whatsappURL;
+  }, 500);
 }
 
 

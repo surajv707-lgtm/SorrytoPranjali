@@ -4,8 +4,7 @@ const totalStages = 5;
 
 
 /* =================================
-   PUT YOUR 10-DIGIT NUMBER HERE
-   WITHOUT +91
+   YOUR WHATSAPP NUMBER
 ================================= */
 
 const whatsappNumber = "9172660105";
@@ -31,13 +30,11 @@ function nextStage() {
 
   oldStage.classList.remove("active");
 
-
   currentStage++;
 
   if (currentStage > totalStages) {
     currentStage = totalStages;
   }
-
 
   const newStage =
     document.getElementById(
@@ -46,11 +43,9 @@ function nextStage() {
 
   newStage.classList.add("active");
 
-
   updateProgress();
 
   createHearts(4);
-
 
   window.scrollTo({
     top: 0,
@@ -68,43 +63,71 @@ function updateProgress() {
   const percentage =
     (currentStage / totalStages) * 100;
 
-
   document.getElementById(
     "progressBar"
-  ).style.width =
-    percentage + "%";
-
+  ).style.width = percentage + "%";
 
   document.getElementById(
     "pageNumber"
-  ).textContent =
-    currentStage;
+  ).textContent = currentStage;
 }
 
 
 /* =================================
    OKAY BUTTON
 ================================= */
+
 async function okayClicked() {
 
-  const response = document.getElementById("response");
+  const response =
+    document.getElementById("response");
 
-  const whatsappURL =
-    "https://wa.me/91" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent("Okay, I forgive you. ❤️");
+
+  /* Copy ONLY the short message */
+
+  try {
+
+    await navigator.clipboard.writeText(
+      whatsappMessage
+    );
+
+  } catch (error) {
+
+    console.log("Clipboard not available");
+
+  }
+
 
   response.innerHTML = `
     Opening WhatsApp... ❤️
   `;
 
+
   createHearts(25);
+
   createConfetti();
 
+
+  /* =================================
+     OPEN WHATSAPP
+     Using the number exactly as entered
+  ================================= */
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(
+      whatsappMessage
+    );
+
+
   setTimeout(() => {
-    window.location.href = whatsappURL;
-  }, 500);
+
+    window.location.href =
+      whatsappURL;
+
+  }, 700);
 }
 
 
@@ -136,10 +159,6 @@ function stillAngry() {
   createHearts(8);
 
 
-  /*
-     Second apology
-  */
-
   setTimeout(() => {
 
     response.innerHTML = `
@@ -154,10 +173,6 @@ function stillAngry() {
 
   }, 2300);
 
-
-  /*
-     Final message
-  */
 
   setTimeout(() => {
 
@@ -216,8 +231,7 @@ function createHearts(amount) {
 
 
     heart.style.left =
-      Math.random() * 100 +
-      "vw";
+      Math.random() * 100 + "vw";
 
 
     heart.style.fontSize =
@@ -267,13 +281,11 @@ function createConfetti() {
 
 
     piece.style.left =
-      Math.random() * 100 +
-      "vw";
+      Math.random() * 100 + "vw";
 
 
     piece.style.animationDelay =
-      Math.random() * 1.5 +
-      "s";
+      Math.random() * 1.5 + "s";
 
 
     document.body.appendChild(
